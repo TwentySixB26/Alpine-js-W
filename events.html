@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+</head>
+<body>
+
+
+    <!-- @  -->
+    <!-- digunakan untuk mengunakan event listener -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}">
+        <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" @click="window.alert(pesan)">Buka</button>
+    </div> -->
+
+
+
+
+    <!-- $event -->
+    <!-- untuk mengambil isi dari atribut  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}">
+        <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" @click="console.log($event.target.id)" id="button">Buka</button>
+    </div> -->
+
+    <!-- $event mengunakan function  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}">
+        <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" @click="ubahWarna" id="button">Buka</button>
+    </div> -->
+
+
+
+
+    <!-- keyboard event keyUp dan Keydown -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}">
+        <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+        <input type="text" @keyup.enter="alert('hello')" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto">
+    </div> -->
+
+
+
+    <!-- $dispatch  -->
+    <!-- untuk membuat custom event sendiri  -->
+    <!-- jika ingin mengambil parameter dari $dispatch harus mengunakan detail, nanti data tersebut akan diambil dan disimpan didalam x-data,oleh sebab itu memerlukan x-data  -->
+    <!-- jadi alurnya : ketika tombol @click dijalankan maka akan menjalan $dispatch yang bernama log dan mengirimkan parameter nya yang bernama nama, @log jalan dan mengambil parameter nama dari @click tapi agar bisa jalan musti disimpan dulu di dalam x-data param yang telah diperoleh oleh sebab itu kita membutuhkan x-data  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}" @log="alert('hello ' + $event.detail.nama)">
+        <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+        <input type="text" @keyup.enter="alert('hello')" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto">
+        <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" @click="$dispatch('log',{nama : 'bayu'})" id="button">Buka</button>
+    </div> -->
+
+
+
+    <!-- prevent  -->
+    <!-- digunakan untuk membajak perilaku.  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}" @log="alert('hello ' + $event.detail.nama)">
+        <form action="/post" @submit.prevent="alert('hallo dunia')">
+            <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+            <input type="text" @keyup.enter="alert('hello')" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto">
+            <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit">Buka</button>
+        </form>
+    </div> -->
+
+
+    <!-- stop  -->
+    <!-- menghentikan event bubling  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}" @click="alert('ini div')">
+            <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+            <input type="text" @keyup.enter="alert('hello')" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto">
+            <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit" @click.stop="alert('ini button')">Buka</button>
+    </div> -->
+
+
+
+    <!-- outside  -->
+    <!-- digunakan untuk memberikan perilaku kepada elemen lain,misalnya jika membuat hamburger menu maka ketika klik dimana saja,hamburger menu tersebut akan hilang  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{open: false }">
+        <button class="py-2 px-5 bg-slate-600 text-white rounded-md mx-auto block my-5" @click="open = !open" x-text="open ? 'tutup' : 'buka'" @click.outside="open = false" >Buka</button>
+        <div class="w-3/4 mx-auto mx-4 py-5 bg-blue-500 rounded text-white text-center" x-show="open">
+            Lorem ipsum dolor sit.
+        </div>
+    </div> -->
+
+
+
+    <!-- once  -->
+    <!-- agar perilaku dipanggil sekali dan tidak berulang ulang  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}" >
+            <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+            <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto" @keyup.once="console.log($event.target.value)">
+            <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit" @click.stop="alert('ini button')">Buka</button>
+    </div> -->
+
+
+
+    <!-- debounce  -->
+    <!-- digunakan agar menunggu beberapa saat ketika melakukan sesuatu,contohnya hampir mirip dengan once,bedanya ini menunggu beberapa saat yaitu 200m/s jika ingin menganti bukan defaultnya 200m/s maka tambahkan parameter untuk lama waktunya -->
+    <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{pesan : 'hello dunia!'}" >
+        <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Nama</label>
+        <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto" @keyup.debounce.2000ms="console.log($event.target.value)">
+        <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit" @click.stop="alert('ini button')">Buka</button>
+    </div>
+
+
+
+    
+
+
+
+
+
+    <script>
+        function ubahWarna(e) {
+            e.target.classList.add('bg-blue-500')
+        }
+
+        document.addEventListener('alpine:init',()=>{
+            Alpine.store('mahasiswa',{
+                tahun:2023,
+                nama:['bayu' , 'aji' , 'nugroho']
+            })
+        })
+    </script>
+</body>
+</html>

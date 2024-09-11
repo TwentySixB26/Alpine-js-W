@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+</head>
+<body>
+
+    <!-- 1. x-text -->
+    <!-- digunakan untuk mencetak text/string  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{nama:'bayu aji',angka : 2 }">
+        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">
+            halo, <span x-text="angka"></span> adalah bilangan : <span x-text=" angka % 2 == 0 ? 'genap' : 'ganjil' "></span>
+        </h1>
+    </div> -->
+
+
+
+    <!-- 2. x-html  -->
+    <!-- digunakan untuk mencetak elemen html  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{nama:'bayu aji',angka : 2, link :'<a href=\'https://www.youtube.com/watch?v=Abl7a47VJVM \'>Youtube chanel </a>' }">
+        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">
+            halo,<span x-html="link"></span>
+        </h1>
+    </div> -->
+
+
+
+    <!-- 3. show  -->
+    <!-- digunakan untuk menampilkan atau menghilangkan tergantung isinya true atau false  -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{open: false }">
+        <button class="py-2 px-5 bg-slate-600 text-white rounded-md mx-auto block my-5" @click="open = !open" x-text="open ? 'tutup' : 'buka' ">Buka</button>
+        <div class="w-3/4 mx-auto mx-4 py-5 bg-blue-500 rounded text-white text-center" x-show="open">
+            Lorem ipsum dolor sit.
+        </div>
+    </div> -->
+
+
+    <!-- 4. x-if  -->
+    <!-- fungsinya hampir sama dengan show,tapi untuk menjalankannya musti dibungkus dengan tag template -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{open: false }">
+        <button class="py-2 px-5 bg-slate-600 text-white rounded-md mx-auto block my-5" @click="open = !open" x-text="open ? 'tutup' : 'buka' ">Buka</button>
+        <template x-if="open">
+            <div class="w-3/4 mx-auto py-5 bg-blue-500 rounded text-white text-center" >
+                Lorem ipsum dolor sit.
+            </div>
+        </template>
+    </div> -->
+
+
+
+    <!-- 5. transition  -->
+    <!-- digunakan untuk membuat transisi pada elemen -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{open: false }">
+        <button class="py-2 px-5 bg-slate-600 text-white rounded-md mx-auto block my-5" @click="open = !open" x-text="open ? 'tutup' : 'buka' ">Buka</button>
+        <div class="w-3/4 mx-auto mx-4 py-5 bg-blue-500 rounded text-white text-center" x-show="open" x-transition.duration.1000ms>
+            Lorem ipsum dolor sit.
+        </div>
+    </div> -->
+
+
+    <!-- 6. x-bind  -->
+    <!-- digunakan untuk membind atribut dari elemen sesuai dari sebuah keadaan, contoh atribut yang bisa di bind atau ubah yaitu: class , property css , keaadaan disable  -->
+    <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow" x-data="{open: false }">
+        <button class="py-2 px-5  text-white rounded-md mx-auto block my-5" @click="open = !open" x-text="open ? 'tutup' : 'buka' " x-bind:class="open ? 'bg-red-600' : 'bg-green-600' ">Buka</button>
+        <div class="w-3/4 mx-auto mx-4 py-5 bg-blue-500 rounded text-white text-center" x-show="open" x-transition.duration.1000ms>
+            Lorem ipsum dolor sit.
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener('alpine:init',()=>{
+            Alpine.store('mahasiswa',{
+                tahun:2023,
+                nama:['bayu' , 'aji' , 'nugroho']
+            })
+        })
+    </script>
+</body>
+</html>

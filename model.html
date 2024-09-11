@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+</head>
+<body>
+
+    
+    <!-- model -->
+    <!-- <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"  x-data="{pesan : ''}">
+            <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Pesan</label>
+            <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto" x-model="pesan">
+            <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit" @click.stop="alert('ini button')">Buka</button>
+            <span x-text="pesan"></span>
+    </div> -->
+
+
+
+    <div class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"  x-data="{pesan : '' , open : false , hobi:[]}">
+            <label for="nama" class="text-sm font-medium text-gray-900 block mb-2 ">Masukan Pesan</label>
+            <textarea  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fulll p-2.5 mx-auto w-full" x-model="pesan">
+            </textarea>
+            <button class="py-2 px-5 bg-slate-500 text-white rounded-md mx-auto block my-5" id="button" type="submit" @click.stop="alert('ini button')">Buka</button>
+            <span x-text="pesan.length" class="text-lg flex text-green-500 text-bold" x-bind:class="pesan.length > 20 ? 'text-red-500' : '' "></span>
+
+
+            <input type="checkbox" id="checkbox" x-model="open">
+            <span for="checkbox" x-text="open ? 'terisi' : 'kosong' "></span>
+
+
+
+            <div class="mt-5">
+                <div class=" items-center mb-2 ">
+                    <input type="checkbox" class="w-4 h-4 text-blue-500 border-gray-600 rounded " value="menulis" id="menulis"  x-model="hobi">
+                    <label for="menulis" class="ml-2 text-sm">Menulis</label>
+                </div>
+                <div class=" items-center mb-2 ">
+                    <input type="checkbox" class="w-4 h-4 text-blue-500 border-gray-600 rounded " value="menyanyi" id="menyanyi"  x-model="hobi">
+                    <label for="menyanyi" class="ml-2 text-sm">menyanyi</label>
+                </div>
+                <div class=" items-center mb-2 ">
+                    <input type="checkbox" class="w-4 h-4 text-blue-500 border-gray-600 rounded " value="ngoding" id="ngoding"  x-model="hobi">
+                    <label for="ngoding" class="ml-2 text-sm">ngoding</label>
+                </div>
+                <div class=" items-center mb-2 ">
+                    <input type="checkbox" class="w-4 h-4 text-blue-500 border-gray-600 rounded " value="gaming" id="gaming"  x-model="hobi">
+                    <label for="gaming" class="ml-2 text-sm">gaming</label>
+                </div>
+
+                <p class="text-center text-sm">Hobby : <span  x-text="hobi"></span> </p>
+                
+
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function ubahWarna(e) {
+            e.target.classList.add('bg-blue-500')
+        }
+
+        document.addEventListener('alpine:init',()=>{
+            Alpine.store('mahasiswa',{
+                tahun:2023,
+                nama:['bayu' , 'aji' , 'nugroho']
+            })
+        })
+    </script>
+</body>
+</html>

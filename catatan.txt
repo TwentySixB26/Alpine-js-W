@@ -1,0 +1,95 @@
+Kapan diharuskan mengunakan alpine js?
+1. show
+hide DOM element atau untuk menampilkan ataupun menghilangkan dari suatu element 
+
+2. Bind User input
+contohnya adalah seperti ketika kita mengisikan sebuah input dan ingin memunculkan 
+hasil inputan tersebut ditempat lain secara real time. 
+
+3. event listing
+cotohnya ketika tag nya di clik , double click select ataupun yang lain ketika melakukan event listner  
+
+4. Manipulasi class 
+cotohnya ketika klik sesuatu tambahkan class dimana, ketika mengetikan sesuatu dikolom maka 
+tambahkan class apa
+
+================================================================================================================================
+
+Cara install alpine js :
+Cara 1 
+tambahkan code ini di head 
+<script src="//unpkg.com/alpinejs" defer></script>
+
+
+Cara 2 
+npm install alpinejs 
+
+import Alpine from 'alpinejs'
+window.Alpine = Alpine 
+Alpine.start() 
+
+
+
+========================================================================================================================
+
+Directives alpine js 
+
+1. x-data  
+2. x-init   
+3. x-show
+4. x-bind 
+5. x-on 
+6. x-text 
+7. x-html 
+8. x-model 
+9. x-modelable
+10. x-from
+11. x-transition 
+12. x-effect 
+13. x-ref 
+14. x-cloak 
+15. x-teleport 
+16. x-if 
+17. x-id       
+
+
+========================================================================================================================
+
+Magic properties
+
+$el 
+$refs 
+$store 
+$watch 
+$dispatch 
+$nextTick 
+$root 
+$data 
+$id 
+
+
+========================================================================================================================
+
+global method 
+
+Alpine.data()
+Alpine.store()
+Alpine.bind()
+
+
+========================================================================================================================
+
+
+state alpine js/ ruang lingkup local 
+
+<div x-data="{nama: 'bayu aji'}">
+    <p><span x-text="nama"></span></p>
+</div>
+
+jika nama dipangil diluar div x-data nama , maka akan terjadi eror/tidak tampil 
+
+
+========================================================================================================================
+
+prevent()
+digunakan untuk membajak perilaku. 
